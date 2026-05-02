@@ -217,3 +217,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 Industrial-grade Optimizer (MILP + Heuristics) - Project Plan.pdf
+CLAUDE.md
+.idea
