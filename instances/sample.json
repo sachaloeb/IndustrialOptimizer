@@ -1,0 +1,68 @@
+{
+  "name": "cvrp_n5_s42",
+  "depot": {
+    "id": 0,
+    "x": 63.942679845788376,
+    "y": 2.5010755222666936,
+    "demand": 0,
+    "tw_start": null,
+    "tw_end": null
+  },
+  "customers": [
+    {
+      "id": 1,
+      "x": 27.502931836911927,
+      "y": 22.321073814882276,
+      "demand": 2,
+      "tw_start": null,
+      "tw_end": null
+    },
+    {
+      "id": 2,
+      "x": 67.66994874229113,
+      "y": 89.21795677048453,
+      "demand": 2,
+      "tw_start": null,
+      "tw_end": null
+    },
+    {
+      "id": 3,
+      "x": 59.049251244903964,
+      "y": 3.1782679481783593,
+      "demand": 2,
+      "tw_start": null,
+      "tw_end": null
+    },
+    {
+      "id": 4,
+      "x": 21.863797480360336,
+      "y": 50.53552881033624,
+      "demand": 1,
+      "tw_start": null,
+      "tw_end": null
+    },
+    {
+      "id": 5,
+      "x": 56.1245062938613,
+      "y": 71.60196129224035,
+      "demand": 9,
+      "tw_start": null,
+      "tw_end": null
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 0,
+      "capacity": 30
+    },
+    {
+      "id": 1,
+      "capacity": 30
+    },
+    {
+      "id": 2,
+      "capacity": 30
+    }
+  ],
+  "format_version": 1
+}

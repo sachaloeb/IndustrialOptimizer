@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "industrial-optimizer"
+version = "0.1.0"
+description = "Industrial-grade CVRP optimizer — MILP (PuLP/CBC) + heuristics + benchmarks"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "pulp>=2.7",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "mypy>=1.5",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+strict = true
+packages = ["industrial_optimizer"]
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = "pulp.*"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
