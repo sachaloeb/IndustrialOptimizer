@@ -11,7 +11,7 @@ Checked constraints
 4. The number of routes does not exceed the fleet size.
 """
 
-from models import FeasibilityReport, Instance, Solution
+from .models import FeasibilityReport, Instance, Solution
 
 
 def check_feasibility(instance: Instance, solution: Solution) -> FeasibilityReport:

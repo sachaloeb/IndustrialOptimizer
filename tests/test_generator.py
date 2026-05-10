@@ -2,8 +2,8 @@
 
 import json
 
-from src.industrial_optimizer.generator import generate_instance
-from src.industrial_optimizer.io import instance_to_dict
+from industrial_optimizer.generator import generate_instance
+from industrial_optimizer.io import instance_to_dict
 
 
 def test_same_seed_byte_identical() -> None:

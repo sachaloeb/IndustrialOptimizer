@@ -4,8 +4,8 @@ Uses a hand-crafted 3-customer instance with known demands so that
 feasibility boundaries are exact and easy to reason about.
 """
 
-from src.industrial_optimizer.feasibility import check_feasibility
-from src.industrial_optimizer.models import (
+from industrial_optimizer.feasibility import check_feasibility
+from industrial_optimizer.models import (
     Instance,
     Node,
     Route,

@@ -5,16 +5,16 @@ a PuLP-based MILP builder (two-index + MTZ), and a feasibility checker.
 Heuristics and benchmark tooling are planned for later weeks.
 """
 
-from src.industrial_optimizer.feasibility import check_feasibility as check_feasibility
-from src.industrial_optimizer.generator import generate_instance as generate_instance
-from src.industrial_optimizer.io import (
+from .feasibility import check_feasibility as check_feasibility
+from .generator import generate_instance as generate_instance
+from .io import (
     instance_from_dict as instance_from_dict,
     instance_to_dict as instance_to_dict,
     load_instance as load_instance,
     save_instance as save_instance,
 )
-from src.industrial_optimizer.milp import build_cvrp_model as build_cvrp_model
-from src.industrial_optimizer.models import (
+from .milp import build_cvrp_model as build_cvrp_model
+from .models import (
     FeasibilityReport as FeasibilityReport,
     Instance as Instance,
     Node as Node,

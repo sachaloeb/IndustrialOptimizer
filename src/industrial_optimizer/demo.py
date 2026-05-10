@@ -10,11 +10,11 @@ pipeline and model construction implemented in Weeks 1-2.
 
 from pathlib import Path
 
-from feasibility import check_feasibility
-from generator import generate_instance
-from io import load_instance, save_instance
-from milp import build_cvrp_model
-from models import Instance, Route, Solution
+from .feasibility import check_feasibility
+from .generator import generate_instance
+from .io import load_instance, save_instance
+from .milp import build_cvrp_model
+from .models import Instance, Route, Solution
 
 # Demo parameters -- small enough to print, large enough to exercise the code.
 DEMO_N_CUSTOMERS = 5

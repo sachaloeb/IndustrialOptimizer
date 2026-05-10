@@ -4,8 +4,8 @@ import json
 import tempfile
 from pathlib import Path
 
-from src.industrial_optimizer.generator import generate_instance
-from src.industrial_optimizer.io import (
+from industrial_optimizer.generator import generate_instance
+from industrial_optimizer.io import (
     instance_from_dict,
     instance_to_dict,
     load_instance,

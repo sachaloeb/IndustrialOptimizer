@@ -83,6 +83,11 @@ IndustrialOptimizer/
 | 5-6 | Heuristics + visualisation | Greedy + local-search heuristic, route visualiser, GIF export, MILP vs heuristic comparison |
 | 7-8 | Hardening + packaging | Expanded benchmarks, documentation, environment pinning, LinkedIn assets, technical write-up |
 
+## Documentation
+
+- [`docs/formulation.md`](docs/formulation.md) — Full MILP formulation (two-index MTZ + three-index alternative) with LaTeX, constraint labels, and trade-off discussion.
+- [`docs/modeling_note.md`](docs/modeling_note.md) — OR(1)-style modelling note: assumptions, constraint commentary, and scope boundaries.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

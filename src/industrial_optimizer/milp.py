@@ -36,7 +36,7 @@ from typing import Any
 
 import pulp
 
-from models import Instance, compute_distance_matrix
+from .models import Instance, compute_distance_matrix
 
 
 def build_cvrp_model(

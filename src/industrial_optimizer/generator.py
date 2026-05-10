@@ -7,7 +7,7 @@ JSON output (within a given Python minor version).
 
 import random as _random_mod
 
-from models import Instance, Node, Vehicle
+from .models import Instance, Node, Vehicle
 
 
 def generate_instance(

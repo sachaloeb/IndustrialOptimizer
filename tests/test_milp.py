@@ -1,7 +1,7 @@
 """Tests for the MILP builder."""
 
-from src.industrial_optimizer.generator import generate_instance
-from src.industrial_optimizer.milp import build_cvrp_model
+from industrial_optimizer.generator import generate_instance
+from industrial_optimizer.milp import build_cvrp_model
 
 
 def test_milp_builder_5_customers() -> None:

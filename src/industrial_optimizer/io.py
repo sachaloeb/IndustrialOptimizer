@@ -9,7 +9,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
-from models import Instance, Node, Vehicle
+from .models import Instance, Node, Vehicle
 
 FORMAT_VERSION = 1
 
