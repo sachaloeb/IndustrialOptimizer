@@ -18,6 +18,9 @@ dev = [
     "pytest>=7.4",
     "mypy>=1.5",
 ]
+plots = [
+    "matplotlib>=3.7",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -29,6 +32,10 @@ mypy_path = "src"
 
 [[tool.mypy.overrides]]
 module = "pulp.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "matplotlib.*"
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

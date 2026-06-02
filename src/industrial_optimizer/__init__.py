@@ -1,10 +1,11 @@
 """Industrial-grade Capacitated Vehicle Routing Problem (CVRP) optimizer.
 
 This package provides data models, a deterministic instance generator,
-a PuLP-based MILP builder (two-index + MTZ), and a feasibility checker.
-Heuristics and benchmark tooling are planned for later weeks.
+a PuLP-based MILP builder (two-index + MTZ), a CBC solver wrapper with
+B&B trajectory logging, an arc decoder, and a feasibility checker.
 """
 
+from .decode import decode_solution as decode_solution
 from .feasibility import check_feasibility as check_feasibility
 from .generator import generate_instance as generate_instance
 from .io import (
@@ -24,6 +25,11 @@ from .models import (
     compute_distance_matrix as compute_distance_matrix,
     euclidean_distance as euclidean_distance,
 )
+from .solver import (
+    SolveResult as SolveResult,
+    lp_relaxation_bound as lp_relaxation_bound,
+    solve_cvrp as solve_cvrp,
+)
 
 __all__ = [
     "Node",
@@ -41,4 +47,8 @@ __all__ = [
     "generate_instance",
     "build_cvrp_model",
     "check_feasibility",
+    "decode_solution",
+    "solve_cvrp",
+    "SolveResult",
+    "lp_relaxation_bound",
 ]

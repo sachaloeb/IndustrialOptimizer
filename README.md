@@ -13,22 +13,24 @@ Given a set of customers with known demands, a depot, and a homogeneous fleet of
 
 The MILP formulation uses a **two-index model with MTZ subtour elimination**, built with [PuLP](https://github.com/coin-or/pulp) (CBC as the default solver).
 
-## Current Scope (Weeks 1-2)
+## Current Scope (Weeks 1-3)
 
 | Delivered | Description |
 |-----------|-------------|
 | Data model | Typed dataclasses: `Node`, `Vehicle`, `Instance`, `Route`, `Solution`, `FeasibilityReport` |
 | JSON I/O | Versioned instance format (`format_version: 1`) with round-trip safety |
 | Instance generator | Deterministic (seeded) synthetic CVRP instances with configurable knobs |
-| MILP builder | Two-index CVRP + MTZ subtour elimination; builds model, does **not** solve |
+| MILP builder | Two-index CVRP + MTZ subtour elimination |
 | Feasibility checker | Validates solutions against instances (coverage, capacity, depot closure, fleet size) |
-| Tests | `pytest` smoke tests for all components |
+| CBC solver | Solves MILP with time limit, captures LP relaxation, B&B trajectory, and gap |
+| Arc decoder | Converts arc-variable values to `Solution` objects (reused by future heuristics) |
+| Benchmark runner | Sweep across instance sizes, seeds, and time budgets; CSV + trajectory logging |
+| B&B plot | Incumbent/best-bound vs. wall-clock trajectory plot from logged data |
+| Tests | `pytest` suite for all components |
 
 ### What is NOT in v1
 
-- Solving the MILP (Week 3-4).
-- Benchmark runner / CSV result logging (Week 3-4).
-- Heuristics — greedy construction + local search (Week 5-6).
+- Heuristics — Clarke-Wright, 2-opt (Week 4).
 - Route visualisation / GIF export (Week 5-6).
 - Multi-depot, stochastic travel times, time-window constraints, real WMS integration.
 
@@ -63,11 +65,13 @@ IndustrialOptimizer/
 │   ├── io.py                   # JSON serialisation / deserialisation
 │   ├── generator.py            # Deterministic instance generator
 │   ├── milp.py                 # MILP builder (PuLP, two-index + MTZ)
+│   ├── solver.py               # CBC solver wrapper + B&B trajectory
+│   ├── decode.py               # Arc-variable decoder (reusable)
 │   ├── feasibility.py          # Solver-independent feasibility checker
 │   └── demo.py                 # End-to-end demo script
 ├── instances/                  # Generated / loaded problem instances
-├── bench/                      # Benchmark runner + CSV logs (Week 3-4)
-├── plots/                      # Benchmark figures (Week 3-4)
+├── bench/                      # Benchmark runner + CSV logs
+├── plots/                      # B&B trajectory plots
 ├── viz/                        # Route visualisation + GIF export (Week 5-6)
 ├── tests/                      # pytest test suite
 ├── pyproject.toml              # Build config, dependencies, tool settings
